@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>✶</text></svg>">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sneha Dindi Portfolio</title>
@@ -26,6 +27,17 @@
   opacity: 1;
   transform: translateY(0);
 }
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 
     body {
       max-width: 100vw;
@@ -39,7 +51,7 @@
     nav {
       position: fixed;
       top: 0;
-      width: 100%;
+      width: 99%;
       padding: 20px 40px;
       background-color: transparent;
       backdrop-filter: blur(10px);
@@ -86,7 +98,7 @@
     }
 
     header {
-      background-color: #f8f9f9;
+      background-color:#fdfdfb;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -165,12 +177,12 @@
     }
 
     .about-section {
-      background-color: #ffffff;
+      background-color: #fdfdfb;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       padding: 100px 10%;
-      background: url('images/cloth-bg.png') no-repeat center center;
+      background: url('contents\cloth-bg.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
     }
@@ -179,7 +191,6 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:;
       z-index: 0;
     }
 
@@ -255,7 +266,7 @@
     }
 
     #contact {
-      background-color: #f6f6f6;
+      background-color: #fdfdfb;
       text-align: center;
       padding: 100px 20px;
     }
@@ -326,7 +337,7 @@
       }
     }
     .projects-section {
-  background-color: #f8f9f9;
+  background-color: #fdfdfb;
   padding: 100px 0;
   text-align: center;
 }
@@ -474,6 +485,8 @@
   }
 }
 .experience-section {
+  background: url('contents\cloth-bg.jpg') no-repeat center center;
+      background-size: cover;
   padding: 80px 10%;
   background-color: #fff;
 }
@@ -542,7 +555,7 @@
 
 .skills-section {
   padding: 100px 10%;
-  background: #f8f9f9;
+  background: #fdfdfb;
 }
 
 .skills-heading {
@@ -660,9 +673,12 @@ details p {
   font-size: 15px;
 }
 #certifications {
-  background: #ffffff;
+  background: url('contents\cloth-bg.jpg') no-repeat center center;
+  background-size: cover;
   padding: 100px 20px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 #certifications h1 {
@@ -699,7 +715,7 @@ details p {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #e5e7eb;
+  background: #939393;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -822,15 +838,16 @@ details p {
       <a href="#contact" class="get-in-touch-btn">Get in Touch</a>
     </div>
     <div class="header-right fade-up">
-      <img src="sneha.jpg" alt="Sneha Dindi" class="shape">
+      <img src="contents\sneha.jpg" alt="Sneha Dindi" class="shape">
       </a>
     </div>
   </header>
 
   <section class="about-section fade-up" id="about">
+    
     <div class="about-left">
   <div class="about-badge">
-  <img src="home-icon.png" alt="About Icon" class="about-icon" />
+  <img src="contents\home-icon.png" alt="About Icon" class="about-icon" />
   About Me
 </div>
 
@@ -861,8 +878,9 @@ details p {
   </div>
   </section>
   <section id="projects" class="scrolling-projects-section" class= "fullscreen-section fade-up">
+    <div class="container">
      <div class="about-badge">
-  <img src="pro-icon.png" alt="About Icon" class="about-icon" />
+  <img src="contents\pro-icon.png" alt="About Icon" class="about-icon" />
   My Projects
 </div>
   <div class="projects-heading">
@@ -1005,14 +1023,15 @@ details p {
         <h3>Currency Converter</h3>
         <p>Real-time currency exchange calculator with clean user interface.</p>
       <a href="https://github.com/snehadindi/currency-converter" class="visit-btn" target="_blank">Visit</a></div>
-
+</div>
   </div>
 </section>
 
   <section class="experience-section fade-up" id="experience">
+    <div class="container">
   <div class="experience-heading">
     <div class="about-badge">
-      <img src="ex-icon.png" alt="Experience Icon" class="about-icon" />
+      <img src="contents\ex-icon.png" alt="Experience Icon" class="about-icon" />
       Experience & Roles
     </div>
     <h2>What I've <span>explored</span> and led</h2>
@@ -1072,13 +1091,15 @@ details p {
       <span class="exp-date">Feb 2024</span>
     </div>
   </div>
+    </div>
 </section>
 
 <!-- SKILLS SECTION -->
 <section id="skills" class="skills-section fade-up">
+  <div class="container">
   <div class="skills-heading">
     <div class="about-badge">
-      <img src="ski-icon.png" alt="Skills Icon" class="about-icon" />
+      <img src="contents\ski-icon.png" alt="Skills Icon" class="about-icon" />
       Skills & Proficiencies
     </div>
     <h2>What I’ve <span>learned</span> along the way</h2>
@@ -1125,12 +1146,14 @@ details p {
     </div>
     </div>   
   </div>
+  </div>
 </section>
 <!-- Certifications Section -->
 <section id="certifications" class="certifications fade-up">
+  <div class="container">
   <div class="certifications-heading">
     <div class="about-badge">
-      <img src="cer-icon.png" alt="Certificate Icon" class="about-icon" />
+      <img src="contents\cer-icon.png" alt="Certificate Icon" class="about-icon" />
       Certifications & Credentials
     </div>
     <h2 style="font-size: 2.5rem; margin: 20px 0 10px; font-weight: 500; color: #1a1a1a;">What I've earned<span style="color: #4d5f54;"> through learning</span></h2>
@@ -1152,11 +1175,13 @@ details p {
   </div>
 
   <a href="https://www.linkedin.com/in/sneha-dindi/details/certifications/" class="book-btn" target="_blank">View All</a>
+  </div>
 </section>
 <!-- CONTACT SECTION -->
 <section id="contact" class="fade-up" style="background-color: #f9fafb; padding: 100px 10%; text-align: center;">
-  <div class="about-badge" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #4d5f54; padding: 5px 12px; border-radius: 20px; background: #ffffff; color: #333; font-size: 14px;">
-    <img src="contact-icon.png" alt="Contact Icon" style="width: 20px; height: 20px;" />
+  <div class="container">
+    <div class="about-badge" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #4d5f54; padding: 5px 12px; border-radius: 20px; background: #ffffff; color: #333; font-size: 14px;">
+    <img src="contents\contact-icon.png" alt="Contact Icon" style="width: 20px; height: 20px;" />
     Contact Me
   </div>
 
@@ -1170,29 +1195,29 @@ details p {
   <p style="color: #6b7280; font-size: 15px;">Want to connect? Reach out to me on any of the platforms below.</p>
   <div style="display: flex; gap: 12px; margin: 16px 0;">
     <a href="https://www.linkedin.com/in/sneha-dindi/" target="_blank" title="LinkedIn">
-  <img src="linkedin-icon.svg" alt="LinkedIn" class="social-icon" />
+  <img src="contents\linkedin-icon.svg" alt="LinkedIn" class="social-icon" />
 </a>
 <a href="https://www.instagram.com/sneha_dindi" target="_blank" title="Instagram">
-  <img src="instagram-icon.svg" alt="Instagram" class="social-icon" />
+  <img src="contents\instagram-icon.svg" alt="Instagram" class="social-icon" />
 </a>
 <a href="https://github.com/snehadindi" target="_blank" title="GitHub">
-  <img src="github-icon.svg" alt="GitHub" class="social-icon" />
+  <img src="contents\github-icon.svg" alt="GitHub" class="social-icon" />
 </a>
 
   </div>
   </div>
     <div class="card" style="background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; text-align: left;">
   <h3 style="font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-    <img src="chat-icon.png" alt="Email Icon" style="width: 20px; height: 20px;" />
+    <img src="contents\chat-icon.png" alt="Email Icon" style="width: 20px; height: 20px;" />
     Email Me
   </h3>
-  <p style="color: #6b7280; font-size: 15px;">Got an idea or opportunity? <br>Drop a message anytime.</br></p>
+  <p style="color: #6b7280; font-size: 15px;">Got an idea or opportunity? <br>Drop a message anytime to dindisneha@gmail.com</br></p>
   <a href="mailto:dindisneha@gmail.com?subject=Let's Connect&body=Hi Sneha," style="margin-top: 12px; display: inline-block; background: #4d5f54; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none;">Send Email</a>
 </div>
 
 <div class="card" style="background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; text-align: left;">
   <h3 style="font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-    <img src="loc-icon.png" alt="Location Icon" style="width: 20px; height: 20px;" />
+    <img src="contents\loc-icon.png" alt="Location Icon" style="width: 20px; height: 20px;" />
     Location
   </h3>
   <p style="margin-top: 16px; font-size: 14px; color: #888;">Based in Kakinada,<br> Andhra Pradesh</br></p>
@@ -1201,7 +1226,7 @@ details p {
 
 
   </div>
-
+  </div>
   <footer style="margin-top: 80px; font-size: 0.9rem; color: #888;">
     © 2025 Sneha Dindi. All rights reserved.
   </footer>
@@ -1230,6 +1255,26 @@ details p {
   section.classList.add('fade-up');
   observer.observe(section);
 });
+  const faders = document.querySelectorAll('.fade-up');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+
+
 
 </script>
 </body>
