@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneha Dindi Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+/* Animation Setup */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    body {
+      max-width: 100vw;
+      font-family: 'Raleway', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      background-color: transparent;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .nav-left span {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2d2d2d;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-center a {
+      color: #2d2d2d;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #5d5c5c;
+    }
+
+    .nav-right a {
+      background-color: #4d5f54;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-right a:hover {
+      color: #ffff;
+      background-color: #607568;
+    }
+
+    header {
+      background-color: #f8f9f9;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 60px 60px;
+    }
+
+    .header-left {
+      flex: 1;
+      text-align: left;
+      align-self: flex-start;
+    }
+
+    .header-left h1 {
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-align: left;
+      color: #1a1a1a;
+    }
+
+    .header-left h1 span {
+      color: #4d5f54;
+    }
+
+    .header-left p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #555;
+      text-align: left;
+    }
+
+    .header-left a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 10px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .download-btn {
+      background-color: #4d5f54;
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .download-btn:hover {
+  background-color: #607568;
+  color: #fff;
+}
+
+    .get-in-touch-btn {
+      background: transparent;
+      color: #4d5f54;
+      margin-left: 10px;
+      border: 1px solid #4d5f54;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .get-in-touch-btn:hover {
+  background-color: #4d5f54;
+  color: #fff;
+}
+
+    .header-right {
+      position: relative;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-right img.shape {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 30px;
+    }
+
+    .about-section {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 100px 10%;
+      background: url('images/cloth-bg.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .about-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:;
+      z-index: 0;
+    }
+
+    .about-left, .about-right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-left {
+      max-width: 50%;
+    }
+
+    .about-left h1 {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-align: left;
+      color: #1a1a1a;
+    }
+    .about-left h1 span {
+      color: #4d5f54;
+    }
+
+    .about-left p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .about-badge {
+  background: #ffffff;
+  color: #333;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #4d5f54;
+}
+
+.about-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+    .about-right {
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-align: left;
+      color: #1a1a1a;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px;
+      padding-top: 10px;
+    }
+
+    .stat h2 {
+      font-size: 40px;
+      font-weight: 500;
+      margin: 0;
+      color: #000000;
+    }
+
+    .stat p {
+      margin: 5px 0 0;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000000;
+    }
+
+    #contact {
+      background-color: #f6f6f6;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    #contact h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    #contact p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-buttons a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .email-btn {
+      background-color: #4d5f54;
+      color: white;
+    }
+
+    .icon-btn {
+      border: 2px solid #4d5f54;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: #fff;
+      color: #4d5f54;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media screen and (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .about-left,
+      .about-right {
+        max-width: 100%;
+      }
+
+      .about-right {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+      }
+    }
+    .projects-section {
+  background-color: #f8f9f9;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.projects-section .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.projects-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+
+.status-badge {
+  background-color: #4d5f54;
+  color: white;
+  font-size: 500px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+.scrolling-projects-section {
+  padding: 80px 0;
+  background: #f8f9f9;;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #2d2d2d;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 280s linear infinite;
+  gap: 30px;
+  padding: 10px 0;
+}
+.project-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  min-width: 265px;
+  max-width: 200px;
+  height: 280px; /* Taller card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2d2d2d;
+  margin-bottom: 12px;
+}
+.projects-heading h2 span {
+      color: #4d5f54;
+    }
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.visit-btn {
+  background-color: #4d5f54;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.visit-btn:hover {
+  background-color: #3a4b42;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.experience-section {
+  padding: 80px 10%;
+  background-color: #fff;
+}
+
+.experience-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.experience-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.experience-heading h2 span {
+  color: #4d5f54;
+}
+
+.experience-heading p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.experience-card {
+  background-color: #f8f9f9;
+  border: 0.1px solid #d7deda;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.experience-card h3 {
+  font-size: 1.2rem;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.exp-date {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+  
+}
+.skills-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.skills-section {
+  padding: 100px 10%;
+  background: #f8f9f9;
+}
+
+.skills-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.skills-heading h2 span {
+  color: #4d5f54;
+}
+
+.skills-heading p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Tab Switch Style */
+.skills-switch-bar {
+  max-width: 700px;
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 auto 30px;
+  padding: 4px;
+  justify-content: center;
+  gap: 10px;
+  width: 100%; 
+  margin-bottom: 20px;
+  border-radius: 19px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.skills-tab-btn {
+  font-family: 'Raleway', sans-serif;
+  padding: 10px 50px;
+  border:none;
+  background: transparent;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 14px;
+  flex: 1;                    /* Distribute buttons evenly */
+  text-align: center;
+}
+
+.skills-tab-btn.active {
+  padding: 20px 50px;
+  border: 0.5px solid #d7d8d8;
+  background: #fff;
+  color: #666;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Skills Container Box */
+.skills-container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 30px;
+}
+
+/* Accordion Styling */
+.skills-tab-content {
+  display: none;
+}
+
+.skills-tab-content.active {
+  display: block;
+}
+
+details {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+summary {
+  font-weight: 600;
+  font-size: 16px;
+  color: #374151;
+  position: relative;
+}
+
+details[open] summary:after {
+  content: "-";
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+
+summary:after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+
+details p {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 15px;
+}
+#certifications {
+  background: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#certifications h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#certifications .description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#certifications .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+}
+
+#certifications .service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#certifications .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+#certifications h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#certifications p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+#certifications .book-btn {
+  display: inline-block;
+  background: #4d5f54;
+  color: #fff;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+#certifications .book-btn:hover {
+  background: #3a4b42;
+}
+#certifications-heading h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+#certifications-heading h2 span {
+  color: #4d5f54;
+}
+.certifications-heading p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.social-icon {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: grayscale(100%) brightness(0.5);
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+}
+.project-card,
+.experience-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.project-card.visible,
+.experience-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.site-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fullscreen-section{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left fade-up">
+      <span>✶ Sneha</span>
+    </div>
+    <div class="nav-center fade-up">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experiences</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right fade-up">
+      <a href="resume.pdf">Download Resume</a>
+    </div>
+  </nav>
+<div class="site-container fade-up"></div>
+  <header id="home">
+    <div class="header-left fade-up">
+      <h1>Transforming data into decisions,<br><span>and ideas</span><br><span>into interfaces.</span></h1>
+      <p>Hi, I’m Sneha Dindi. I blend data, code, and design to build thoughtful, tech-driven solutions that make an impact.</p>
+      <a href="resume.pdf" class="download-btn">Download Resume</a>
+      <a href="#contact" class="get-in-touch-btn">Get in Touch</a>
+    </div>
+    <div class="header-right fade-up">
+      <img src="sneha.jpg" alt="Sneha Dindi" class="shape">
+      </a>
+    </div>
+  </header>
+
+  <section class="about-section fade-up" id="about">
+    <div class="about-left">
+  <div class="about-badge">
+  <img src="home-icon.png" alt="About Icon" class="about-icon" />
+  About Me
+</div>
+
+  <h1><span>Hi, I'm Sneha -</span><br>Frontend Developer & AI Enthusiast</h1>
+  <p>
+    I'm passionate about using data to solve real-world problems. With experience in AI, ML, cloud, and web development, I’ve built everything from smart farming systems to mental health chatbots. 
+    <br><br>
+    Whether it's crafting user-friendly interfaces or designing intelligent solutions, I thrive on blending creativity with code to deliver meaningful digital experiences.
+  </p>
+</div>
+
+   <div class="about-right">
+  <div class="stat">
+    <h2>12+</h2>
+    <p>Projects Delivered</p>
+  </div>
+  <div class="stat">
+    <h2>2+</h2>
+    <p>Hackathons Participated</p>
+  </div>
+  <div class="stat">
+    <h2>30+</h2>
+    <p>Certifications Earned</p>
+  </div>
+  <div class="stat">
+    <h2>4</h2>
+    <p>Internships & Roles</p>
+  </div>
+  </section>
+  <section id="projects" class="scrolling-projects-section" class= "fullscreen-section fade-up">
+     <div class="about-badge">
+  <img src="pro-icon.png" alt="About Icon" class="about-icon" />
+  My Projects
+</div>
+  <div class="projects-heading">
+  <h2>Where ideas meet<br><span> execution.</br></span></h2>
+  <p>From hackathon ideas to full-stack builds, here’s a showcase of everything I’ve created with code, design, and data.</p>
+</div>
+
+
+  <div class="marquee-container">
+    <div class="marquee">
+      
+      <!-- 🔁 Project Cards (1st loop) -->
+      <div class="project-card">
+        <h3>PitchSense</h3>
+        <p>AI-powered pitch coach that analyzes clarity, filler words, and delivery for speakers.</p>
+      <a href="#" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Selah – Mental Health Chatbot</h3>
+        <p>Conversational chatbot offering real-time emotional support.</p>
+      <a href="https://snehadindi.github.io/Selah/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>AgriCure</h3>
+        <p>Smart farming solution for crop and fertilizer recommendations.</p>
+      <a href="https://snehadindi.github.io/AgriCure-farming/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Joyce – Chatbot</h3>
+        <p>Cute assistant chatbot designed for quick answers and user interaction.</p>
+      <a href="https://snehadindi.github.io/Joyce-Chatbot/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Swiggy Data Analysis</h3>
+        <p>Data-driven insights on customer behavior and delivery trends using Python & Pandas.</p>
+      <a href="https://github.com/snehadindi/SwiggyDataAnalysis" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Analyzing Bias in LLMs</h3>
+        <p>Research project evaluating legal bias in LLMs through social and identity prompts.</p>
+      <a href="https://github.com/snehadindi/Analyzing-Bias-in-LLMs" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Hand Gesture Recognition</h3>
+        <p>Real-time gesture detection system using OpenCV and Mediapipe.</p>
+      <a href="https://github.com/snehadindi/hand-recognition" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Password Generator</h3>
+        <p>Customizable password creator with strength indicators and UI built in Python.</p>
+      <a href="https://github.com/snehadindi/password-generator" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Invisibility Project</h3>
+        <p>Cloak simulation using color detection and OpenCV masking techniques.</p>
+      <a href="https://github.com/snehadindi/invisibility" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Timetable Management System</h3>
+        <p>Simple desktop view class timetable.</p>
+      <a href="https://github.com/snehadindi/timetable" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Word Game</h3>
+        <p>Vocabulary-building game with scoring and levels using Python logic.</p>
+      <a href="https://github.com/snehadindi/wordgame" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Number Guessing Game</h3>
+        <p>Classic terminal game with hints and limited attempts coded in Python.</p>
+      <a href="https://github.com/snehadindi/number-guessing" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Currency Converter</h3>
+        <p>Real-time currency exchange calculator with clean user interface.</p>
+      <a href="https://github.com/snehadindi/currency-converter" class="visit-btn" target="_blank">Visit</a></div>
+
+      <!-- 🔁 Duplicate Cards (2nd loop for infinite scroll) -->
+      <div class="project-card">
+        <h3>PitchSense</h3>
+        <p>AI-powered pitch coach that analyzes clarity, filler words, and delivery for speakers.</p>
+      <a href="#" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Selah – Mental Health Chatbot</h3>
+        <p>Conversational chatbot offering real-time emotional support.</p>
+      <a href="https://snehadindi.github.io/Selah/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>AgriCure</h3>
+        <p>Smart farming solution for crop and fertilizer recommendations.</p>
+      <a href="https://snehadindi.github.io/AgriCure-farming/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Joyce – Chatbot</h3>
+        <p>Cute assistant chatbot designed for quick answers and user interaction.</p>
+      <a href="https://snehadindi.github.io/Joyce-Chatbot/" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Swiggy Data Analysis</h3>
+        <p>Data-driven insights on customer behavior and delivery trends using Python & Pandas.</p>
+      <a href="https://github.com/snehadindi/SwiggyDataAnalysis" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Analyzing Bias in LLMs</h3>
+        <p>Research project evaluating legal bias in LLMs through social and identity prompts.</p>
+      <a href="https://github.com/snehadindi/Analyzing-Bias-in-LLMs" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Hand Gesture Recognition</h3>
+        <p>Real-time gesture detection system using OpenCV and Mediapipe.</p>
+      <a href="https://github.com/snehadindi/hand-recognition" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Password Generator</h3>
+        <p>Customizable password creator with strength indicators and UI built in Python.</p>
+      <a href="https://github.com/snehadindi/password-generator" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Invisibility Project</h3>
+        <p>Cloak simulation using color detection and OpenCV masking techniques.</p>
+      <a href="https://github.com/snehadindi/invisibility" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Timetable Management System</h3>
+        <p>Simple desktop view class timetable.</p>
+      <a href="https://github.com/snehadindi/timetable" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Word Game</h3>
+        <p>Vocabulary-building game with scoring and levels using Python logic.</p>
+      <a href="https://github.com/snehadindi/wordgame" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Number Guessing Game</h3>
+        <p>Classic terminal game with hints and limited attempts coded in Python.</p>
+      <a href="https://github.com/snehadindi/number-guessing" class="visit-btn" target="_blank">Visit</a></div>
+
+      <div class="project-card">
+        <h3>Currency Converter</h3>
+        <p>Real-time currency exchange calculator with clean user interface.</p>
+      <a href="https://github.com/snehadindi/currency-converter" class="visit-btn" target="_blank">Visit</a></div>
+
+  </div>
+</section>
+
+  <section class="experience-section fade-up" id="experience">
+  <div class="experience-heading">
+    <div class="about-badge">
+      <img src="ex-icon.png" alt="Experience Icon" class="about-icon" />
+      Experience & Roles
+    </div>
+    <h2>What I've <span>explored</span> and led</h2>
+    <p>A snapshot of my internships, leadership roles, and tech journeys so far.</p>
+  </div>
+
+  <div class="experience-grid">
+    
+<div class="experience-card">
+      <h3>Team Lead – GDG WOW Hackathon</h3>
+      <p>Led development of PitchSense, an AI pitch coaching tool for public speaking.</p>
+      <span class="exp-date">June 2025</span>
+    </div>
+    <div class="experience-card">
+      <h3>Team Lead – SIH 2024, IDE Bootcamp</h3>
+      <p>Recognized as Best Performing Team for innovation & teamwork in AgriTech project.</p>
+      <span class="exp-date">Feb 2025</span>
+    </div>
+     <div class="experience-card">
+      <h3>Coordinator – Basement Blues Club</h3>
+      <p>Organized campus music events and supported artist collaborations.</p>
+      <span class="exp-date">Cultural Fest 2025</span>
+    </div>
+
+    <div class="experience-card">
+      <h3>Main Coordinator – Data Vishleshana</h3>
+      <p>Led planning & execution of annual data science fest events.</p>
+      <span class="exp-date">Tech Fest 2025</span>
+    </div>
+
+    <div class="experience-card">
+      <h3>Attendee – Google DevFest</h3>
+      <p>Explored advancements in AI, cloud and developer tools with industry experts.</p>
+      <span class="exp-date">DevFest 2024</span>
+    </div>
+
+    <div class="experience-card">
+      <h3>AWS Cloud Virtual Internship</h3>
+      <p>Worked hands-on with AWS EC2, S3, Lambda for practical cloud computing skills.</p>
+      <span class="exp-date">Virtual, 2024</span>
+    </div>
+
+    <div class="experience-card">
+      <h3>Google Cloud Gen-AI Internship</h3>
+      <p>Built and deployed generative AI apps using Vertex AI & cloud tooling.</p>
+      <span class="exp-date">Virtual, 2024</span>
+    </div>
+
+    <div class="experience-card">
+      <h3>Campus Ambassador</h3>
+      <p>Promoted the platform, boosted awareness, and gathered user insights at Chatwise UK Ltd.</p>
+      <span class="exp-date">May – Jun 2024</span>
+    </div>
+    <div class="experience-card">
+      <h3>Participant – Smart Pragati Hackathon 2024</h3>
+      <p>Contributed to the development of an AI-powered Grievance Redressal Chatbot using NLP to ensure secure and effective communication.</p></p>
+      <span class="exp-date">Feb 2024</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills-section fade-up">
+  <div class="skills-heading">
+    <div class="about-badge">
+      <img src="ski-icon.png" alt="Skills Icon" class="about-icon" />
+      Skills & Proficiencies
+    </div>
+    <h2>What I’ve <span>learned</span> along the way</h2>
+    <p>A blend of languages I speak and the tech I use to bring ideas to life.</p>
+  </div>
+
+  <!-- Switch Tabs -->
+  <div class="skills-wrapper">
+  <div class="skills-switch-bar">
+    <button class="skills-tab-btn active" onclick="showSkillsTab('tech')">Technical Skills</button>
+    <button class="skills-tab-btn" onclick="showSkillsTab('lang')">Language Skills</button>
+  </div>
+
+  <!-- Skill Content -->
+  <div class="skills-container">
+    <div id="tech" class="skills-tab-content active">
+      <details>
+        <summary>Programming Languages</summary>
+        <p>Python, C, Java, HTML, CSS, JavaScript</p>
+      </details>
+      <details>
+        <summary>Web & App Development</summary>
+        <p>SQL, JavaScript</p>
+      </details>
+      <details>
+        <summary>Tools & Platforms</summary>
+        <p>Git, GitHub, Google Cloud, AWS, VS Code</p>
+      </details>
+    </div>
+    <!-- Spoken Languages -->
+    <div id="lang" class="skills-tab-content">
+      <details>
+        <summary>English</summary>
+        <p>Fluent – used daily in collaboration, writing, and presentations.</p>
+      </details>
+      <details>
+        <summary>Telugu</summary>
+        <p>Native – excellent command in both written and spoken form.</p>
+      </details>
+      <details>
+        <summary>Hindi</summary>
+        <p>Professional proficiency – strong grasp in conversation and reading.</p>
+      </details>
+    </div>
+    </div>   
+  </div>
+</section>
+<!-- Certifications Section -->
+<section id="certifications" class="certifications fade-up">
+  <div class="certifications-heading">
+    <div class="about-badge">
+      <img src="cer-icon.png" alt="Certificate Icon" class="about-icon" />
+      Certifications & Credentials
+    </div>
+    <h2 style="font-size: 2.5rem; margin: 20px 0 10px; font-weight: 500; color: #1a1a1a;">What I've earned<span style="color: #4d5f54;"> through learning</span></h2>
+    <p>Courses and credentials that reflect my journey through tech, AI, cloud, and more.</p>
+  </div>
+
+  <div class="grid">
+    <div class="service-card">
+      <div class="icon">☁️</div>
+      <h3>Google Associate Cloud Engineer</h3>
+      <p>Validated skills in deploying and managing Google Cloud services — including Compute Engine, Cloud Storage, and IAM — with a focus on scalability and reliability.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="icon">💬</div>
+      <h3>Salesforce AI Associate</h3>
+      <p>Explored the fundamentals of AI within Salesforce platforms — covering ethical AI, Einstein capabilities, and business impact through automation and personalization.</p>
+    </div>
+  </div>
+
+  <a href="https://www.linkedin.com/in/sneha-dindi/details/certifications/" class="book-btn" target="_blank">View All</a>
+</section>
+<!-- CONTACT SECTION -->
+<section id="contact" class="fade-up" style="background-color: #f9fafb; padding: 100px 10%; text-align: center;">
+  <div class="about-badge" style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid #4d5f54; padding: 5px 12px; border-radius: 20px; background: #ffffff; color: #333; font-size: 14px;">
+    <img src="contact-icon.png" alt="Contact Icon" style="width: 20px; height: 20px;" />
+    Contact Me
+  </div>
+
+  <h2 style="font-size: 2.5rem; margin: 20px 0 10px; font-weight: 500; color: #1a1a1a;">Let's <span style="color: #4d5f54;">connect</span> and collaborate</h2>
+  <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 60px;">Have a project in mind or just want to say hi? I’m always open to meaningful conversations and new opportunities.</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    
+    <div class="card" style="background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; text-align: left;">
+  <h3 style="font-size: 18px; margin-bottom: 8px;">💬 Let’s Chat</h3>
+  <p style="color: #6b7280; font-size: 15px;">Want to connect? Reach out to me on any of the platforms below.</p>
+  <div style="display: flex; gap: 12px; margin: 16px 0;">
+    <a href="https://www.linkedin.com/in/sneha-dindi/" target="_blank" title="LinkedIn">
+  <img src="linkedin-icon.svg" alt="LinkedIn" class="social-icon" />
+</a>
+<a href="https://www.instagram.com/sneha_dindi" target="_blank" title="Instagram">
+  <img src="instagram-icon.svg" alt="Instagram" class="social-icon" />
+</a>
+<a href="https://github.com/snehadindi" target="_blank" title="GitHub">
+  <img src="github-icon.svg" alt="GitHub" class="social-icon" />
+</a>
+
+  </div>
+  </div>
+    <div class="card" style="background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; text-align: left;">
+  <h3 style="font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+    <img src="chat-icon.png" alt="Email Icon" style="width: 20px; height: 20px;" />
+    Email Me
+  </h3>
+  <p style="color: #6b7280; font-size: 15px;">Got an idea or opportunity? <br>Drop a message anytime.</br></p>
+  <a href="mailto:dindisneha@gmail.com?subject=Let's Connect&body=Hi Sneha," style="margin-top: 12px; display: inline-block; background: #4d5f54; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none;">Send Email</a>
+</div>
+
+<div class="card" style="background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; text-align: left;">
+  <h3 style="font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+    <img src="loc-icon.png" alt="Location Icon" style="width: 20px; height: 20px;" />
+    Location
+  </h3>
+  <p style="margin-top: 16px; font-size: 14px; color: #888;">Based in Kakinada,<br> Andhra Pradesh</br></p>
+  <a href="https://www.google.com/maps/place/Kakinada,+Andhra+Pradesh" target="_blank" style="margin-top: 12px; display: inline-block; background: #4d5f54; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none;">View Map</a>
+</div>
+
+
+  </div>
+
+  <footer style="margin-top: 80px; font-size: 0.9rem; color: #888;">
+    © 2025 Sneha Dindi. All rights reserved.
+  </footer>
+</section>
+<script>
+  function showSkillsTab(tabId) {
+    document.querySelectorAll('.skills-tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.skills-tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+   const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.fade-up').forEach(section => {
+    observer.observe(section);
+  });
+  document.querySelectorAll('.project-card, .experience-card').forEach(section => {
+  section.classList.add('fade-up');
+  observer.observe(section);
+});
+
+</script>
+</body>
+</html>
